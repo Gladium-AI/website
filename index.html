@@ -177,31 +177,27 @@
     <div class="feature-split reveal" style="margin-top:120px">
       <div class="feature-visual">
         <div class="terminal">
-          <div><span class="prompt">$</span> gladium tools <span class="flag">--list</span></div>
-          <div class="output">Available integrations:</div>
-          <div class="output">&nbsp; n8n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trigger & manage n8n workflows</div>
-          <div class="output">&nbsp; linkedin &nbsp;&nbsp;&nbsp; Profile enrichment & outreach</div>
-          <div class="output">&nbsp; x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Post, search & engage</div>
-          <div class="output">&nbsp; apollo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lead search & contact data</div>
-          <div class="output">&nbsp; slack &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Messaging & channel ops</div>
-          <div class="output">&nbsp; gmail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Read, draft & send emails</div>
-          <div class="output">&nbsp; <span style="color:var(--text-muted)">+ 12 more services</span></div>
+          <div><span class="prompt">$</span> gladium-linkedin <span class="flag">--help</span></div>
+          <div class="output">CLI for LinkedIn automation — search, enrich, outreach</div>
+          <div class="output">&nbsp; search &nbsp;&nbsp;&nbsp;&nbsp; Find profiles by role, company, location</div>
+          <div class="output">&nbsp; enrich &nbsp;&nbsp;&nbsp;&nbsp; Pull full contact data from a profile</div>
+          <div class="output">&nbsp; outreach &nbsp;&nbsp; Send connection requests & messages</div>
           <div>&nbsp;</div>
-          <div><span class="prompt">$</span> gladium connect <span class="flag">--service</span> linkedin <span class="flag">--agent</span> outreach-01</div>
-          <div class="output">→ Registering LinkedIn tools with agent...</div>
-          <div class="success">✓ 4 tools registered: search_profiles, enrich_contact, send_message, get_analytics</div>
+          <div><span class="prompt">$</span> gladium-apollo enrich <span class="flag">--domain</span> acme.com</div>
+          <div class="success">✓ 14 contacts found — exported to contacts.json</div>
           <div>&nbsp;</div>
-          <div><span class="prompt">$</span> gladium connect <span class="flag">--service</span> n8n <span class="flag">--agent</span> outreach-01</div>
-          <div class="success">✓ 3 tools registered: trigger_workflow, get_execution, list_workflows</div>
+          <div><span class="prompt">$</span> gladium-n8n trigger <span class="flag">--workflow</span> lead-pipeline <span class="flag">--input</span> contacts.json</div>
+          <div class="output">→ Executing workflow "lead-pipeline"...</div>
+          <div class="success">✓ 14 contacts processed → synced to CRM</div>
+          <div>&nbsp;</div>
+          <div><span class="prompt">$</span> gladium-x post <span class="flag">--thread</span> launch-update.md</div>
+          <div class="success">✓ Thread posted (4 tweets) — https://x.com/...</div>
         </div>
       </div>
       <div>
         <span class="section-label">Developer Tools</span>
-        <h2 class="section-title">A CLI that gives agents<br><em>smart tools</em></h2>
-        <p class="section-desc" style="margin-bottom:32px">We built a custom CLI that connects AI agents to the services they need. One command to give your agent the ability to interact with n8n, LinkedIn, X, Apollo, and dozens of other platforms — with structured, production-ready tool interfaces.</p>
-        <div class="what-item" style="border-bottom:none;padding:0">
-          <p style="font-size:14px;color:var(--text-secondary);line-height:1.7">Each integration exposes smart, scoped tools that agents can call directly: trigger n8n workflows, enrich leads through Apollo, manage LinkedIn outreach, post on X, send emails via Gmail, and coordinate across Slack channels. No glue code, no fragile wrappers — just plug a service in and let the agent use it.</p>
-        </div>
+        <h2 class="section-title">CLI tools that bridge agents<br>to <em>real platforms</em></h2>
+        <p class="section-desc">We built dedicated CLI tools that let AI agents interact with LinkedIn, X, Apollo, n8n, and more. Each tool is purpose-built for its platform — giving agents structured, reliable access to search, enrich, automate, and act across services.</p>
       </div>
     </div>
   </div>
