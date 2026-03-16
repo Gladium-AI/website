@@ -1,0 +1,9 @@
+{
+  "name": "gladiumai",
+  "account_id": "71491cd4dc4dc3257fde02fb3932b5aa",
+  "compatibility_date": "2026-03-16",
+  "main": "src/worker.js",
+  "assets": {
+    "directory": "./dist"
+  }
+}
