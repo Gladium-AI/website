@@ -148,26 +148,28 @@
         </div>
       </div>
       <div class="feature-visual">
-        <div class="agent-viz">
-          <div class="agent-viz-label">Agent workflow — order processing</div>
-          <div class="agent-viz-row">
-            <div class="agent-viz-node active">Incoming order</div>
-            <div class="agent-viz-arrow">→</div>
-            <div class="agent-viz-node active">Validate & enrich</div>
-            <div class="agent-viz-arrow">→</div>
-            <div class="agent-viz-node active">Route to fulfillment</div>
+        <div class="hub-graph">
+          <svg class="hub-lines" viewBox="0 0 400 400" fill="none">
+            <line class="hub-beam" x1="200" y1="200" x2="200" y2="44"/>
+            <line class="hub-beam" x1="200" y1="200" x2="335" y2="100"/>
+            <line class="hub-beam" x1="200" y1="200" x2="356" y2="200"/>
+            <line class="hub-beam" x1="200" y1="200" x2="335" y2="300"/>
+            <line class="hub-beam" x1="200" y1="200" x2="200" y2="356"/>
+            <line class="hub-beam" x1="200" y1="200" x2="65" y2="300"/>
+            <line class="hub-beam" x1="200" y1="200" x2="44" y2="200"/>
+            <line class="hub-beam" x1="200" y1="200" x2="65" y2="100"/>
+          </svg>
+          <div class="hub-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2a4 4 0 0 1 4-4z"/><path d="M8 8v1a4 4 0 0 0 8 0V8"/><path d="M12 13v3"/><path d="M9 22h6"/><path d="M12 16v6"/><circle cx="12" cy="6" r="1.5" fill="currentColor" stroke="none"/><path d="M5 10c-1.5 1-2.5 3-2.5 5 0 3.5 4.3 6.5 9.5 6.5s9.5-3 9.5-6.5c0-2-1-4-2.5-5"/></svg>
           </div>
-          <div class="agent-viz-row">
-            <div class="agent-viz-node">Check inventory</div>
-            <div class="agent-viz-arrow">→</div>
-            <div class="agent-viz-node">Generate invoice</div>
-            <div class="agent-viz-arrow">→</div>
-            <div class="agent-viz-node">Notify customer</div>
-          </div>
-          <div class="agent-viz-result">
-            <span class="check">✓</span>
-            Order processed — 4.2s avg · 99.7% success rate
-          </div>
+          <div class="hub-node" style="top:0;left:50%;transform:translateX(-50%)"><img src="/icons/gmail.svg" alt="Gmail"></div>
+          <div class="hub-node" style="top:12%;right:4%"><img src="/icons/googledrive.svg" alt="Google Drive"></div>
+          <div class="hub-node" style="top:50%;right:0;transform:translateY(-50%)"><img src="/icons/slack.svg" alt="Slack"></div>
+          <div class="hub-node" style="bottom:12%;right:4%"><img src="/icons/zapier.svg" alt="Zapier"></div>
+          <div class="hub-node" style="bottom:0;left:50%;transform:translateX(-50%)"><img src="/icons/notion.svg" alt="Notion"></div>
+          <div class="hub-node" style="bottom:12%;left:4%"><img src="/icons/telegram.svg" alt="Telegram"></div>
+          <div class="hub-node" style="top:50%;left:0;transform:translateY(-50%)"><img src="/icons/discord.svg" alt="Discord"></div>
+          <div class="hub-node" style="top:12%;left:4%"><img src="/icons/microsoftonedrive.svg" alt="OneDrive"></div>
         </div>
       </div>
     </div>
