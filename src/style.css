@@ -189,28 +189,18 @@ nav.scrolled{
   -webkit-mask-image:linear-gradient(to right,transparent 0%,black 12%,black 88%,transparent 100%);
 }
 .marquee-track{
-  display:flex;align-items:center;gap:64px;
+  display:flex;align-items:center;gap:72px;
   width:max-content;
   animation:marquee-scroll 55s linear infinite;
 }
-.marquee-item{
-  display:flex;align-items:center;gap:12px;
+.marquee-icon{
+  width:36px;height:36px;
   flex-shrink:0;
-}
-.marquee-item img{
-  width:28px;height:28px;
-  opacity:0.35;
-  filter:brightness(0) invert(0.55);
+  opacity:0.3;
+  filter:brightness(0) invert(0.5);
   transition:opacity 0.3s, filter 0.3s;
 }
-.marquee-item:hover img{opacity:0.6;filter:brightness(0) invert(0.75)}
-.marquee-item span{
-  font-size:15px;color:rgba(255,255,255,0.3);
-  letter-spacing:0.02em;white-space:nowrap;
-  font-weight:400;
-  transition:color 0.3s;
-}
-.marquee-item:hover span{color:rgba(255,255,255,0.55)}
+.marquee-icon:hover{opacity:0.55;filter:brightness(0) invert(0.7)}
 @keyframes marquee-scroll{
   0%{transform:translateX(0)}
   100%{transform:translateX(-50%)}
