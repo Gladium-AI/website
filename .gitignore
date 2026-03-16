@@ -22,3 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Secrets / env
+.env
+.env.*
+credentials.json
+
+# Claude
+.claude/
+
+# Drafts / reference files
+gladium-ai.html
+public/Frame*
