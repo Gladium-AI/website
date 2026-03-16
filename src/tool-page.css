@@ -84,21 +84,22 @@
 /* FLOW STEPS */
 .tool-flow{
   display:flex;align-items:center;gap:8px;margin-top:32px;
-  flex-wrap:wrap;
+  flex-wrap:nowrap;
 }
 .tool-flow-step{
-  display:flex;align-items:center;gap:10px;
-  padding:10px 16px;border:1px solid var(--border);border-radius:100px;
-  font-size:13px;color:var(--text-secondary);
-  background:var(--bg-card);
+  display:flex;align-items:center;gap:8px;
+  padding:8px 14px;border:1px solid var(--border);border-radius:100px;
+  font-size:12px;color:var(--text-secondary);
+  background:var(--bg-card);white-space:nowrap;
 }
 .tool-flow-num{
-  width:22px;height:22px;border-radius:50%;
+  width:20px;height:20px;border-radius:50%;
   background:var(--accent-glow);border:1px solid var(--accent-dim);
-  color:var(--accent);font-size:11px;font-weight:500;
+  color:var(--accent);font-size:10px;font-weight:500;
   display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
 }
-.tool-flow-arrow{color:var(--text-muted)}
+.tool-flow-arrow{color:var(--text-muted);flex-shrink:0}
 
 /* FEATURE CARDS GRID */
 .tool-features-grid{
@@ -180,8 +181,8 @@
   .tool-two-col.reverse > :last-child{order:1}
   .tool-features-grid{grid-template-columns:1fr;gap:14px}
   .tool-stats{grid-template-columns:1fr;gap:14px}
-  .tool-flow{flex-direction:column;align-items:flex-start}
-  .tool-flow-arrow{transform:rotate(90deg);align-self:center}
+  .tool-flow{flex-direction:column;align-items:center;flex-wrap:wrap}
+  .tool-flow-arrow{transform:rotate(90deg)}
 }
 @media(max-width:600px){
   .tool-hero h1{font-size:42px}
