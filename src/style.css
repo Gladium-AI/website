@@ -174,6 +174,46 @@ nav.scrolled{
 }
 .hero-scroll .line{width:1px;height:40px;background:linear-gradient(to bottom,var(--text-muted),transparent);animation:scrollLine 2s infinite}
 
+/* INTEGRATIONS MARQUEE */
+.marquee-section{
+  padding:48px 0;border-top:1px solid var(--border);
+  overflow:hidden;
+}
+.marquee-label{
+  text-align:center;font-size:12px;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--text-muted);margin-bottom:32px;
+}
+.marquee-wrapper{
+  position:relative;
+  mask-image:linear-gradient(to right,transparent 0%,black 12%,black 88%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,black 12%,black 88%,transparent 100%);
+}
+.marquee-track{
+  display:flex;align-items:center;gap:56px;
+  width:max-content;
+  animation:marquee-scroll 35s linear infinite;
+}
+.marquee-item{
+  display:flex;align-items:center;gap:10px;
+  flex-shrink:0;
+}
+.marquee-item img{
+  width:20px;height:20px;
+  opacity:0.45;
+  filter:brightness(0) invert(1);
+  transition:opacity 0.3s;
+}
+.marquee-item:hover img{opacity:0.75}
+.marquee-item span{
+  font-size:14px;color:var(--text-muted);
+  letter-spacing:0.02em;white-space:nowrap;
+  font-weight:400;
+}
+@keyframes marquee-scroll{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
+
 /* LOGOS */
 .logos-section{
   padding:60px 40px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
