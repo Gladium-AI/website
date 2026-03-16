@@ -177,27 +177,30 @@
     <div class="feature-split reveal" style="margin-top:120px">
       <div class="feature-visual">
         <div class="terminal">
-          <div><span class="prompt">$</span> gladium init <span class="flag">--template</span> worker-agent</div>
-          <div class="output">→ Scaffolding agent project...</div>
-          <div class="output">→ Created gladium.config.yaml</div>
-          <div class="output">→ Created agent/main.py</div>
+          <div><span class="prompt">$</span> gladium tools <span class="flag">--list</span></div>
+          <div class="output">Available integrations:</div>
+          <div class="output">&nbsp; n8n &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trigger & manage n8n workflows</div>
+          <div class="output">&nbsp; linkedin &nbsp;&nbsp;&nbsp; Profile enrichment & outreach</div>
+          <div class="output">&nbsp; x &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Post, search & engage</div>
+          <div class="output">&nbsp; apollo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lead search & contact data</div>
+          <div class="output">&nbsp; slack &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Messaging & channel ops</div>
+          <div class="output">&nbsp; gmail &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Read, draft & send emails</div>
+          <div class="output">&nbsp; <span style="color:var(--text-muted)">+ 12 more services</span></div>
           <div>&nbsp;</div>
-          <div><span class="prompt">$</span> gladium deploy <span class="flag">--env</span> production</div>
-          <div class="output">→ Building container image...</div>
-          <div class="output">→ Running health checks...</div>
-          <div class="success">✓ Agent deployed to production</div>
-          <div class="success">&nbsp; https://agents.gladium.ai/worker-01</div>
+          <div><span class="prompt">$</span> gladium connect <span class="flag">--service</span> linkedin <span class="flag">--agent</span> outreach-01</div>
+          <div class="output">→ Registering LinkedIn tools with agent...</div>
+          <div class="success">✓ 4 tools registered: search_profiles, enrich_contact, send_message, get_analytics</div>
           <div>&nbsp;</div>
-          <div><span class="prompt">$</span> gladium status</div>
-          <div class="output">worker-01 &nbsp; <span class="success">● running</span> &nbsp; 12h uptime &nbsp; 2,847 tasks</div>
+          <div><span class="prompt">$</span> gladium connect <span class="flag">--service</span> n8n <span class="flag">--agent</span> outreach-01</div>
+          <div class="success">✓ 3 tools registered: trigger_workflow, get_execution, list_workflows</div>
         </div>
       </div>
       <div>
         <span class="section-label">Developer Tools</span>
-        <h2 class="section-title">CLI tools & deployment<br>built for <em>agents</em></h2>
-        <p class="section-desc" style="margin-bottom:32px">We build the tooling that makes deploying and managing AI agents fast, repeatable, and reliable. From project scaffolding to production deployment — everything through the command line.</p>
+        <h2 class="section-title">A CLI that gives agents<br><em>smart tools</em></h2>
+        <p class="section-desc" style="margin-bottom:32px">We built a custom CLI that connects AI agents to the services they need. One command to give your agent the ability to interact with n8n, LinkedIn, X, Apollo, and dozens of other platforms — with structured, production-ready tool interfaces.</p>
         <div class="what-item" style="border-bottom:none;padding:0">
-          <p style="font-size:14px;color:var(--text-secondary);line-height:1.7">Our CLI tools handle agent initialization, configuration management, environment setup, deployment pipelines, health monitoring, and log aggregation. One workflow from local development to production. All open-source.</p>
+          <p style="font-size:14px;color:var(--text-secondary);line-height:1.7">Each integration exposes smart, scoped tools that agents can call directly: trigger n8n workflows, enrich leads through Apollo, manage LinkedIn outreach, post on X, send emails via Gmail, and coordinate across Slack channels. No glue code, no fragile wrappers — just plug a service in and let the agent use it.</p>
         </div>
       </div>
     </div>
