@@ -435,6 +435,32 @@ section{padding:140px 40px}
   padding:4px 10px;border:1px solid var(--border);border-radius:100px;
   font-size:11px;color:var(--text-muted);letter-spacing:0.02em;
 }
+/* COMING SOON CARDS */
+.oss-card-soon{
+  pointer-events:none;cursor:default;
+}
+.oss-card-soon > *:not(.oss-card-soon-overlay){
+  filter:blur(3px);
+  opacity:0.4;
+}
+.oss-card-soon-overlay{
+  position:absolute;inset:0;z-index:3;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:12px;
+}
+.oss-card-soon-overlay span{
+  padding:8px 24px;
+  border:1px solid var(--border-hover);
+  border-radius:100px;
+  font-size:12px;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--text-secondary);
+  background:rgba(14,14,14,0.7);
+  backdrop-filter:blur(4px);
+}
+
 .oss-cta{
   text-align:center;margin-top:48px;
 }
@@ -625,6 +651,9 @@ section{padding:140px 40px}
   background:var(--accent-glow);
   transform:translateY(-2px);
   box-shadow:0 8px 30px rgba(62,207,142,0.1);
+.cta-response-time{
+  margin-top:24px;font-size:13px;color:var(--text-muted);
+  letter-spacing:0.02em;font-weight:300;
 }
 
 /* FOOTER */
