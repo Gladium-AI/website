@@ -651,9 +651,10 @@ section{padding:140px 40px}
   background:var(--accent-glow);
   transform:translateY(-2px);
   box-shadow:0 8px 30px rgba(62,207,142,0.1);
+}
 .cta-response-time{
-  margin-top:24px;font-size:13px;color:var(--text-muted);
-  letter-spacing:0.02em;font-weight:300;
+  margin-top:20px;font-size:11px;color:var(--text-muted);
+  letter-spacing:0.03em;font-weight:300;opacity:0.6;
 }
 
 /* FOOTER */
