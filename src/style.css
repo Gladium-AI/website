@@ -149,7 +149,7 @@ nav.scrolled{
 }
 .btn-primary{
   padding:14px 32px;background:var(--accent);color:var(--bg);
-  font-size:14px;font-weight:500;border:none;border-radius:8px;
+  font-size:14px;font-weight:500;border:none;border-radius:100px;
   cursor:pointer;font-family:var(--font-body);letter-spacing:0.01em;
   transition:all 0.25s var(--ease);text-decoration:none;
   box-shadow:0 0 30px rgba(62,207,142,0.15);
@@ -161,7 +161,7 @@ nav.scrolled{
 .btn-secondary{
   padding:14px 32px;background:transparent;color:var(--text-primary);
   font-size:14px;font-weight:400;border:1px solid var(--border-hover);
-  border-radius:8px;cursor:pointer;font-family:var(--font-body);
+  border-radius:100px;cursor:pointer;font-family:var(--font-body);
   letter-spacing:0.01em;transition:all 0.25s var(--ease);text-decoration:none;
 }
 .btn-secondary:hover{border-color:var(--text-muted);color:var(--text-primary)}
@@ -608,7 +608,7 @@ section{padding:140px 40px}
 .cta-channel-btn{
   display:flex;align-items:center;gap:10px;
   padding:16px 32px;
-  border:1px solid var(--border);border-radius:10px;
+  border:1px solid var(--border);border-radius:100px;
   background:var(--bg-card);
   color:var(--text-primary);
   font-size:15px;font-weight:400;font-family:var(--font-body);
