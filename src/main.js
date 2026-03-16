@@ -113,6 +113,9 @@ document.querySelector('.nav-toggle').addEventListener('click', () => {
 })
 
 // NAV CTA
-document.querySelector('.nav-cta').addEventListener('click', () => {
-  window.location.href = '#contact'
+document.querySelectorAll('.nav-cta').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelector('.nav-center').classList.remove('open')
+    window.location.href = '#open-source'
+  })
 })
