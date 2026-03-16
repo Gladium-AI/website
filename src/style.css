@@ -537,7 +537,8 @@ footer{
 .footer-brand .logo-img{
   height:20px;width:auto;display:block;
 }
-.footer-tagline{font-size:13px;color:var(--text-muted);margin-bottom:24px}
+.footer-tagline{font-size:13px;color:var(--text-muted);margin-bottom:16px}
+.footer-address{font-size:12px;color:var(--text-muted);line-height:1.7;margin-bottom:16px}
 .footer-copy{font-size:12px;color:var(--text-muted)}
 .footer-right{display:flex;gap:80px}
 .footer-col h4{
