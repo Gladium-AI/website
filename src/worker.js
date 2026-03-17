@@ -4,6 +4,22 @@ const TRANSLATIONS = { it };
 const LANG_PREFIXES = Object.keys(TRANSLATIONS);
 const PAGE_PATHS = ['/', '/tools/n8n-cli/', '/tools/x-cli/'];
 
+// Bots that should NOT be auto-redirected (so they index both versions)
+const BOT_PATTERN = /bot|crawl|spider|slurp|facebookexternalhit|linkedinbot|twitterbot|whatsapp|telegram|embedly|quora|pinterest|redditbot|applebot|yandex|duckduckbot|baiduspider|sogou|semrush|ahrefs|mj12bot|dotbot|petalbot|bytespider|gptbot|chatgpt|anthropic|claude|perplexity/i;
+
+function isBot(request) {
+  const ua = request.headers.get('user-agent') || '';
+  return BOT_PATTERN.test(ua);
+}
+
+function prefersItalian(request) {
+  const accept = request.headers.get('accept-language') || '';
+  if (!accept) return false;
+  // Parse first language in Accept-Language header
+  const primary = accept.split(',')[0].trim().split(';')[0].trim();
+  return primary.startsWith('it');
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -22,16 +38,26 @@ export default {
     }
 
     // Redirect /it to /it/
-    if (pathname === `/${lang}`) {
+    if (lang && pathname === `/${lang}`) {
       return Response.redirect(`${url.origin}/${lang}/`, 301);
     }
 
-    // No language prefix — serve English, inject hreflang on HTML
+    // No language prefix — English page
     if (!lang) {
+      // Auto-redirect Italian visitors to /it/ (skip bots)
+      if (!isBot(request) && prefersItalian(request)) {
+        const italianUrl = `${url.origin}/it${pathname}${url.search}`;
+        return new Response(null, {
+          status: 302,
+          headers: { 'Location': italianUrl, 'Vary': 'Accept-Language' },
+        });
+      }
+
       const response = await env.ASSETS.fetch(request);
       const ct = response.headers.get('content-type') || '';
       if (!ct.includes('text/html')) return response;
 
+      // Inject hreflang tags into English pages
       return new HTMLRewriter()
         .on('head', new HreflangInjector(pathname))
         .transform(response);
@@ -67,6 +93,7 @@ export default {
 
     const headers = new Headers(transformed.headers);
     headers.set('Content-Language', lang);
+    headers.set('Vary', 'Accept-Language');
 
     return new Response(transformed.body, {
       status: transformed.status,
@@ -119,7 +146,6 @@ class HeadTransformer {
     this.translations = translations;
   }
   element(el) {
-    // Inject hreflang tags
     el.append(
       `\n<link rel="alternate" hreflang="en" href="https://gladium.ai${this.path}">`,
       { html: true }
