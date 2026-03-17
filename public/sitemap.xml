@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://gladium.ai/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gladium.ai/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gladium.ai/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gladium.ai/"/>
+    <lastmod>2026-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://gladium.ai/it/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gladium.ai/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gladium.ai/it/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gladium.ai/"/>
     <lastmod>2026-03-17</lastmod>
   </url>
   <url>
     <loc>https://gladium.ai/tools/n8n-cli/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gladium.ai/tools/n8n-cli/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gladium.ai/it/tools/n8n-cli/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gladium.ai/tools/n8n-cli/"/>
+    <lastmod>2026-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://gladium.ai/it/tools/n8n-cli/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gladium.ai/tools/n8n-cli/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gladium.ai/it/tools/n8n-cli/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gladium.ai/tools/n8n-cli/"/>
     <lastmod>2026-03-17</lastmod>
   </url>
   <url>
     <loc>https://gladium.ai/tools/x-cli/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gladium.ai/tools/x-cli/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gladium.ai/it/tools/x-cli/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gladium.ai/tools/x-cli/"/>
+    <lastmod>2026-03-17</lastmod>
+  </url>
+  <url>
+    <loc>https://gladium.ai/it/tools/x-cli/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gladium.ai/tools/x-cli/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://gladium.ai/it/tools/x-cli/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://gladium.ai/tools/x-cli/"/>
     <lastmod>2026-03-17</lastmod>
   </url>
 </urlset>

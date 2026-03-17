@@ -119,3 +119,15 @@ document.querySelectorAll('.nav-cta').forEach((btn) => {
     window.location.href = '#open-source'
   })
 })
+
+// LANGUAGE SWITCHER
+const langSwitch = document.getElementById('langSwitch')
+if (langSwitch) {
+  const isItalian = document.documentElement.lang === 'it'
+  if (isItalian) {
+    langSwitch.textContent = 'EN'
+    langSwitch.href = window.location.pathname.replace(/^\/it/, '') || '/'
+  } else {
+    langSwitch.href = '/it' + window.location.pathname
+  }
+}
