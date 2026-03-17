@@ -218,22 +218,24 @@
 
     <div class="feature-split reveal" style="margin-top:120px">
       <div class="feature-visual">
-        <div class="terminal">
-          <div><span class="prompt">$</span> gladium-linkedin <span class="flag">--help</span></div>
-          <div class="output">CLI for LinkedIn automation — search, enrich, outreach</div>
-          <div class="output">&nbsp; search &nbsp;&nbsp;&nbsp;&nbsp; Find profiles by role, company, location</div>
-          <div class="output">&nbsp; enrich &nbsp;&nbsp;&nbsp;&nbsp; Pull full contact data from a profile</div>
-          <div class="output">&nbsp; outreach &nbsp;&nbsp; Send connection requests & messages</div>
-          <div>&nbsp;</div>
-          <div><span class="prompt">$</span> gladium-apollo enrich <span class="flag">--domain</span> acme.com</div>
-          <div class="success">✓ 14 contacts found — exported to contacts.json</div>
-          <div>&nbsp;</div>
-          <div><span class="prompt">$</span> gladium-n8n trigger <span class="flag">--workflow</span> lead-pipeline <span class="flag">--input</span> contacts.json</div>
-          <div class="output">→ Executing workflow "lead-pipeline"...</div>
-          <div class="success">✓ 14 contacts processed → synced to CRM</div>
-          <div>&nbsp;</div>
-          <div><span class="prompt">$</span> gladium-x post <span class="flag">--thread</span> launch-update.md</div>
-          <div class="success">✓ Thread posted (4 tweets) — https://x.com/...</div>
+        <div class="hub-graph">
+          <svg class="hub-lines" viewBox="0 0 400 400" fill="none">
+            <line class="hub-beam" x1="200" y1="200" x2="200" y2="44"/>
+            <line class="hub-beam" x1="200" y1="200" x2="335" y2="100"/>
+            <line class="hub-beam" x1="200" y1="200" x2="335" y2="300"/>
+            <line class="hub-beam" x1="200" y1="200" x2="200" y2="356"/>
+            <line class="hub-beam" x1="200" y1="200" x2="65" y2="300"/>
+            <line class="hub-beam" x1="200" y1="200" x2="65" y2="100"/>
+          </svg>
+          <div class="hub-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="hub-node" style="top:0;left:50%;transform:translateX(-50%)"><img src="/icons/linkedin.svg" alt="LinkedIn"></div>
+          <div class="hub-node" style="top:12%;right:4%"><img src="/icons/x.svg" alt="X"></div>
+          <div class="hub-node" style="bottom:12%;right:4%"><img src="/icons/n8n.svg" alt="n8n"></div>
+          <div class="hub-node" style="bottom:0;left:50%;transform:translateX(-50%)"><img src="/icons/notion.svg" alt="Notion"></div>
+          <div class="hub-node" style="bottom:12%;left:4%"><img src="/icons/clickup.svg" alt="ClickUp"></div>
+          <div class="hub-node" style="top:12%;left:4%"><img src="/icons/amazonaws.svg" alt="AWS"></div>
         </div>
       </div>
       <div>
