@@ -76,11 +76,10 @@ export const it = {
     "CLI per n8n progettato per agenti AI. Operazioni di inspect, patch e update a livello di nodo tramite un layer di astrazione parser \u2014 cos\u00EC gli agenti possono modificare singoli nodi senza riscrivere interi workflow.",
   'oss.xcli.desc':
     "CLI reverse-engineered per X (Twitter). Scarica timeline, cerca profili e follower tramite l'API GraphQL interna di X \u2014 nessuna API key necessaria. Completamente gratuito.",
-  'oss.runtime.desc':
-    'Runtime leggero per agenti con gestione della memoria integrata, esecuzione di tool, logging strutturato e gestione elegante dello shutdown.',
-  'oss.scripts.desc':
-    'Raccolta di script di deployment testati in produzione, utilit\u00E0 di setup dell\'ambiente e helper di automazione per portare gli agenti in produzione velocemente.',
-  'oss.comingsoon': 'In Arrivo',
+  'oss.notion.desc':
+    'CLI per Notion API progettato per agenti AI con output normalizzato ed efficiente per il contesto. Copre l\'intera superficie API di Notion \u2014 pagine, database, blocchi, commenti, ricerca \u2014 in un singolo binario. Risposte 3.5x pi\u00F9 piccole di default.',
+  'oss.flare.desc':
+    'Esponi qualsiasi app locale su internet con un solo comando \u2014 protetto con Cloudflare Tunnel + Access. Costruito per agenti AI e sviluppatori. Un comando crea tunnel, record DNS e policy di accesso.',
   'oss.viewall': 'Vedi tutti i repository su GitHub',
 
   // Vision
