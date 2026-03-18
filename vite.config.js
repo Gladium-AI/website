@@ -30,6 +30,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         'n8n-cli': resolve(__dirname, 'tools/n8n-cli/index.html'),
         'x-cli': resolve(__dirname, 'tools/x-cli/index.html'),
+        'neo-notion-cli': resolve(__dirname, 'tools/neo-notion-cli/index.html'),
+        'flare-cli': resolve(__dirname, 'tools/flare-cli/index.html'),
         ...getBlogInputs(),
       },
     },
