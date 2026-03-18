@@ -4,19 +4,34 @@ import './style.css'
 ;(function () {
   const canvas = document.getElementById('heroCanvas')
   const ctx = canvas.getContext('2d')
-  let w,
-    h,
+  let w = 0,
+    h = 0,
     nodes = [],
+    running = false,
     mouse = { x: -1000, y: -1000 }
   const NODE_COUNT = 50
   const CONNECT_DIST = 180
+  const DPR = Math.min(window.devicePixelRatio || 1, 2)
 
-  function resize() {
-    w = canvas.width = canvas.offsetWidth
-    h = canvas.height = canvas.offsetHeight
+  function resize(newW, newH) {
+    const prevW = w, prevH = h
+    w = newW
+    h = newH
+    canvas.width = w * DPR
+    canvas.height = h * DPR
+    canvas.style.width = w + 'px'
+    canvas.style.height = h + 'px'
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0)
+    // Re-map existing nodes into new bounds (avoids re-scatter on resize)
+    if (prevW > 0 && prevH > 0) {
+      for (const n of nodes) {
+        n.x = (n.x / prevW) * w
+        n.y = (n.y / prevH) * h
+      }
+    }
   }
-  function init() {
-    resize()
+
+  function scatter() {
     nodes = []
     for (let i = 0; i < NODE_COUNT; i++) {
       nodes.push({
@@ -28,7 +43,9 @@ import './style.css'
       })
     }
   }
+
   function draw() {
+    if (w === 0 || h === 0) { requestAnimationFrame(draw); return }
     ctx.clearRect(0, 0, w, h)
     // connections
     for (let i = 0; i < nodes.length; i++) {
@@ -68,7 +85,20 @@ import './style.css'
     }
     requestAnimationFrame(draw)
   }
-  window.addEventListener('resize', resize)
+
+  // Use ResizeObserver to get real dimensions (fixes first-load on mobile)
+  const ro = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      const cr = entry.contentRect
+      if (cr.width === 0 || cr.height === 0) continue
+      const needsScatter = w === 0
+      resize(cr.width, cr.height)
+      if (needsScatter) scatter()
+      if (!running) { running = true; draw() }
+    }
+  })
+  ro.observe(canvas)
+
   canvas.addEventListener('mousemove', (e) => {
     const rect = canvas.getBoundingClientRect()
     mouse.x = e.clientX - rect.left
@@ -78,8 +108,6 @@ import './style.css'
     mouse.x = -1000
     mouse.y = -1000
   })
-  init()
-  draw()
 })()
 
 // SCROLL REVEAL
