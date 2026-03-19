@@ -157,6 +157,7 @@ We typically respond within 10 hours.
 ## Links
 
 - [Homepage](https://gladium.ai/)
+- [LinkedIn](https://www.linkedin.com/company/gladium-ai/)
 - [n8n-cli Tool Page](https://gladium.ai/tools/n8n-cli/)
 - [x-cli Tool Page](https://gladium.ai/tools/x-cli/)
 - [GitHub Organization](https://github.com/gladium-ai)
