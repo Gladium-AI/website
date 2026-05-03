@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "NeueHaasGroteskText Pro";
+    src: url(../fonts/fonnts.com-Neue_Haas_Grotesk_Text_Pro_55_Roman.otf) format("opentype");
+}
+
+h1,h2,h3,p,table,th,td,a,ul,li {
+    padding: 0;
+    margin: 0;
+    font-family: "NeueHaasGroteskText Pro";
+    font-size: 20px;
+    line-height: 25px
+}
+
+#i, td[headers="i"] {
+    text-align: left;
+}
+
+#p, td[headers="p"] {
+    text-align: right;
+}
+
+a {
+    color: #7EC8E3;
+}
+
+a:visited {
+    color: #B0C4DE;
+}
+
+table {
+    width: 100%;
+}
+
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  /* background-color: rgb(0, 73, 255); */
+  background-color: #1E1E1E;
+  color: aliceblue;
+}
+
+.page {
+  padding: clamp(16px, 10vw, 64px);
+  box-sizing: border-box;
+}
+
+.layout {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+}
+
+.panel {
+    border-left: 1px solid aliceblue;
+    padding-left: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.panel.swapping {
+    opacity: 0;
+}
+
+tbody {
+    margin: clamp(16px, 10vw, 64px);
+}
+
+.receipt-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.receipt-images img {
+    flex: 1 1 300px;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.logo {
+    height: 1.5%; 
+    margin-bottom: 17px;
+}
+
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr 1fr;
+  }
+  .panel {
+    min-height: 600px;
+
+  }
+  .receipt-images img {
+    flex: 1 1 300px;
+    max-width: 40%;
+    min-width: 0;
+}
+
+    .logo {
+        height: 2.5%; 
+        margin-bottom: 17px;  
+    }
+}

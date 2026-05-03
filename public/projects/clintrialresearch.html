@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClinTrial Research | Project | Gladium AI</title>
+    <meta name="description"
+        content="We design, build and ship automations that needs to be reliable in the real world."
+        data-i18n-meta="meta.description">
+    <link rel="canonical" href="https://gladium.ai/projects/clintrialresearch.html">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gladium AI" data-i18n-meta="meta.og.title">
+    <meta property="og:description"
+        content="We design, build and ship automations that needs to be reliable in the real world."
+        data-i18n-meta="meta.og.description">
+    <meta property="og:url" content="https://gladium.ai/">
+    <meta property="og:site_name" content="Gladium AI">
+    <meta property="og:image" content="https://gladium.ai/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Gladium AI",
+      "legalName": "Gladium Agency AI LLC",
+      "url": "https://gladium.ai",
+      "logo": "https://gladium.ai/gladium-logo.png",
+      "description": "We design, build and ship automations that needs to be reliable in the real world.",
+      "founder": { "@type": "Person", "name": "Paolo Anzani" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "30N South Gould Street, STE R",
+        "addressLocality": "Sheridan",
+        "addressRegion": "WY",
+        "postalCode": "82801",
+        "addressCountry": "US"
+      },
+      "sameAs": ["https://github.com/gladium-ai"],
+      "contactPoint": { "@type": "ContactPoint", "email": "paolo@gladium.ai", "contactType": "sales" }
+    },
+    { "@type": "WebSite", "name": "Gladium AI", "url": "https://gladium.ai" }
+  ]
+}
+</script>
+</head>
+
+<body>
+    <div class="page">
+        <p><a href="../index.html">Gladium AI</a> > Projects > ClinTrial Research</p>
+        <br>
+        <div class="layout">
+            <div class="panel">
+                <p><u>A fail-proof, AI-powered, <a href="https://www.dol.gov/general/ppii" target="_blank">PII-compliant</a> system for automatic redaction of sensitive patient information from receipts.</u></p>
+                <br>
+                <h2>[what we solved]</h2>
+                <br>
+                <p><a href="https://clintrialresearch.com" target="_blank">ClinTrial Research</a> is a leading company in the trial site management industry. Part of their routine office tasks is to redact and store ride on-demand receipts from vendors. Part of their service includes making sure patients are being transported on site and back home during trial days. Every month, ride receipts need to be sent to the trial sponsors in order to get reimbursement. Due to PII compliance rules, the receipts cannot just be stored and sent over as they are — every piece of personal information attributable to the patient needs to be carefully redacted.</p>
+                <br>
+                <p>Before we stepped in, the process was done entirely manually by the office team: every receipt needed to be manually saved from the inbox, converted into a PDF file, manually redacted, and paired with the correct patient's trial information.</p>
+                <br>
+                <div class="receipt-images">
+                    <img src="../assets/images/not-redacted-receipts-ctr.png" alt="Not redacted receipt" />
+                    <img src="../assets/images/redacted-receipts-ctr.png" alt="Redacted receipt" />
+                </div>
+                <br>
+                <h2>[our solution]</h2>
+                <br>
+                <p>- Programmatic redaction script (built for speed)</p>
+                <p>- AI verification (<code>claude haiku 4-5</code>)</p>
+                <p>- HTML to PDF renderer microservice</p>
+                <p>- Vendors SFTP connection system</p>
+                <p>- Agentic fallback mechanism</p>
+                <p>- Failure notification system</p>
+
+                <br>
+                <p>The system we built monitors the inbox where receipts are automatically delivered. When a receipt from Uber or Lyft is detected, the system executes a custom-made redaction script on the raw email's HTML content. We then pipe the redacted result through our own microservice where the HTML file gets rendered to a PDF.</p>
+                <br>
+                <p>An LLM chain node, powered by <code>claude-haiku-4-5</code>, analyzes the receipt and determines whether it was redacted correctly, checking that no sensitive information slipped through.</p>
+                <br>
+                <img src="../assets/images/first-workflow-part-ctr.png" style="width: 100%; margin-bottom: 17px;" />
+                <br>
+                <p>The fallback system rarely gets triggered, but when it does we first use an AI agent node to verify we are actually looking at a receipt file. If that's not the case, we gracefully end the workflow there but send a notification to our team so the execution can be audited for further investigation and potential fixes. We then look into what really happened.</p>
+                <br>
+                <img src="../assets/images/second-workflow-part-ctr.png" style="width: 100%; margin-bottom: 17px;" />
+                <br>
+                <p>After this step we have two distinct AI agents, one for each vendor. The agents' job is to take the entire receipt's HTML content and rewrite it from scratch with redacted information. The logic is simple: to save cost and speed, our primary system is based on a programmatic script. The receipts always come in the same format, so we can parse them very fast and redact information without relying on AI. In the rare case this process fails, we fall back on an <i>intelligent</i> approach, using an LLM to rewrite the entire receipt from scratch with sensitive data stripped. In the end the process is the same: the HTML content gets converted into a PDF file and safely stored.</p>
+                <br>
+                <h2>[some problems we faced]</h2>
+                <br>
+                <p>Every receipt needs to be paired with the trial information of the patient who took the ride. While inside Uber receipts this data was fairly easy to retrieve, on Lyft receipts the extraction was harder — not because we couldn't parse them, but because the data wasn't present at all most of the time.</p>
+                <p>To solve the problem we utilized the <a
+                        href="https://help.lyft.com/business/hc/en-us/articles/360001689868-Connecting-to-Lyft-s-SFTP-service-for-automatic-syncing"
+                        target="_blank">Lyft SFTP</a> automatic expense reports system. We built another workflow to
+                    monitor uploaded <code>.csv</code> reports every day. By doing so we could pair the trial information
+                    we needed with the unique receipt number. The number gets extracted from the receipt during the
+                    redaction phase, and the resulting PDF gets saved with the following naming convention:
+                    <code>&lt;receipt_number&gt;-LYFT.pdf</code></p>
+                    <br>
+                    <img src="../assets/images/third-part-workflow-part-ctr.png" style="width: 100%;"/>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
