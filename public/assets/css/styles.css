@@ -53,8 +53,6 @@ body {
 .page {
   padding: clamp(16px, 10vw, 64px);
   box-sizing: border-box;
-  max-width: 100%;
-  overflow-x: hidden;
 }
 
 .layout {
@@ -67,6 +65,7 @@ body {
     border-left: 1px solid aliceblue;
     padding-left: 10px;
     transition: opacity 0.3s ease;
+    min-width: 0;
 }
 
 .panel.swapping {
@@ -90,7 +89,9 @@ tbody {
 }
 
 .logo {
-    height: 1.5%; 
+    max-width: 150px;
+    width: 100%;
+    height: auto;
     margin-bottom: 17px;
 }
 
@@ -109,7 +110,9 @@ tbody {
 }
 
     .logo {
-        height: 2.5%; 
-        margin-bottom: 17px;  
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+        margin-bottom: 17px;
     }
 }
